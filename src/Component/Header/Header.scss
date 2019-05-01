@@ -1,0 +1,274 @@
+@import '../../_variables';
+.Header {
+    color: green;
+    background: url(/images/background.jpg);
+    height: 702px;
+    max-width: 100%;
+    background-size: cover;
+    border-bottom-left-radius: 150px;
+    border-bottom-right-radius: 150px;
+
+    nav{
+        position: relative;
+        padding-top: 40px;
+        
+        > ul{
+            
+            li{
+                list-style: none;
+                float: left;
+                margin-right: 50px;
+                a{
+                    color: #fff;
+                    display: block;
+                    text-transform: uppercase;
+                    text-decoration: none;
+                    font-size: 18px;
+                    line-height: 51px;
+                    transition: 0.5s;
+                    position: relative;
+
+                 
+                    
+                    &::after{
+                        content: '';
+                        height: 3px;
+                        background: transparent;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width:100%;
+                    }
+                    
+                    
+                }
+                
+                a:not(.special):hover::after{
+                    content: '';
+                    animation:0.5s borderAnimation linear;
+                    background:$color-dark-primary;
+                    
+                  
+                    
+                 
+                }
+             
+             
+
+            }
+            .logo a{
+                font-size: 51px;
+
+              
+            }
+
+            .contact-nav a{
+                background: linear-gradient(to right, $color-dark-primary, $color-light-primary);
+                height: 32px;
+                padding: 0 34px;
+                line-height: 32px;
+                border-radius: 10px;
+                margin-top:6px;
+               
+                &:hover{
+                    background: #fff;
+                    color: $color-dark-primary;
+                
+                }
+            }
+
+            
+        }
+
+        .mobile-nav{
+            position: absolute;
+            top: 5px;
+            left: 0;
+            width: 100%;
+            display: none;
+            ul{
+                li{
+                    list-style:none;
+                    a{
+                        color: #fff;
+                        display: block;
+                        text-transform: uppercase;
+                        text-decoration: none;
+                        font-size: 18px;
+                        line-height: 51px;
+                        transition: 0.5s;
+                        font-size: 14px;
+                    }
+                }
+
+                .logo a{
+                    font-size: 51px;
+    
+                  
+                }
+    
+                .contact-nav a{
+                    background: linear-gradient(to right, $color-dark-primary, $color-light-primary);
+                    height: 32px;
+                    padding: 0 34px;
+                    line-height: 32px;
+                    border-radius: 10px;
+                   
+    
+                    &:hover{
+                        background: #fff;
+                    
+                    }
+                }
+            }
+        }
+
+        .hidden-navBar{
+            position: absolute;
+            right: 30px;
+            top: 20px;
+            background: linear-gradient(to right, $color-dark-primary, $color-light-primary);
+            height: 40px;
+            padding: 0 26px;
+            line-height: 40px;
+            color: #fff;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            display: none;
+
+        }
+    }
+}
+
+@keyframes borderAnimation {
+    0%{
+        width: 0%;
+    }
+
+    40%{
+        width: 40%;
+    }
+
+    80%{
+        width: 90%;
+    }
+
+    100%{
+        width: 100%;
+    }
+}
+
+
+@media (max-width:1204px){
+    .Header{
+        nav{
+            ul{
+                margin:0px 10px;
+                li{
+                    margin-right:30px;
+                    a{
+                        font-size: 14px;
+                    }
+                }
+
+              
+            }
+        }
+    }
+}
+
+@media (max-width:950px){
+    .Header{
+        
+        position: relative;
+        text-align: center;
+        nav{
+            > ul{
+                margin-top: 40px;
+                display: inline-block;
+                animation: 0.5s topDown ease-in-out;
+                li{
+                    float: none;
+                    margin-right: 0;
+                    
+                    a{
+                        font-size: 18px;
+                    }
+                }
+
+           
+            }
+            
+         
+
+            .mobile-nav{
+                display: block;
+                ul{
+                    .logo{
+                        position: absolute;
+                        left: 30px;
+                        top: 20px;
+                    }
+                    .contact-nav{
+                        position: absolute;
+                        right: 140px;
+                        top: 20px;
+
+                        a:hover{
+                            color: $color-dark-primary
+                        }
+                    }
+                }
+            }
+
+            .hidden-navBar{
+                display: block;
+            }
+        }
+    }
+}
+
+@keyframes topDown{
+    0%{
+        margin-top:-80px;
+    }
+
+    80%{
+        margin-top: 80px;
+    }
+
+    100%{
+        margin-top:40px;
+    }
+}
+
+@media (max-width: 500px){
+    .Header{
+
+        nav{
+
+            .mobile-nav{
+                ul{
+                    .contact-nav{
+
+                        right: 80px;
+                        a{
+                            height: 30px;
+                            line-height: 30px;
+                            padding: 0 20px
+                        }
+                    }
+                }
+            }
+
+            .hidden-navBar{
+                height: 30px;
+                line-height: 30px;
+                padding: 0 20px;
+                top: 25px;
+            }
+        }
+    }
+    
+}
