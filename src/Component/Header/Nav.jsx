@@ -14,7 +14,6 @@ class Nav extends Component {
     }
 
     windowResized=(e)=>{
-        console.log(e);
         let width = e.target.innerWidth;
         if(width > MobileWidth){
             this.setState({

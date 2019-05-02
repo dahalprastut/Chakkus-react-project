@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Header.scss';
 import '../../App.scss';
 import Nav from './Nav';
+import Login from './Login';
 class Header extends Component {
     
    
@@ -12,6 +13,7 @@ class Header extends Component {
                 <div className="center">
                 
                     <Nav />
+                    <Login />
                 </div>
             </div>
         );
